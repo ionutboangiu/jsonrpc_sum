@@ -96,7 +96,10 @@ func main() {
 	}
 
 	for {
-		conn, _ := ln.Accept()
+		conn, err := ln.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
 
 		go server.ServeCodec(jsonrpc.NewServerCodec(conn))
 	}

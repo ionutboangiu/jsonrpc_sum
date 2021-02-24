@@ -12,9 +12,9 @@ var client *rpc.Client
 
 func TestServer(t *testing.T) {
 
-	conn, err1 := net.Dial("tcp", "localhost:1234")
-	if err1 != nil {
-		log.Fatal(err1)
+	conn, err := net.Dial("tcp", "localhost:1234")
+	if err != nil {
+		log.Fatal(err)
 	}
 
 	client := jsonrpc.NewClient(conn)

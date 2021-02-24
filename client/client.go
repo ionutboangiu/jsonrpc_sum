@@ -41,6 +41,6 @@ func main() {
 	r := ArgsRead{w.FilePath, sum}
 
 	client.Call("MyServer.Read", r, &rsum)
-	fmt.Println(rsum)
+	fmt.Printf("sum of %v and %v is %v\n", elem.Item1, elem.Item2, rsum)
 
 }
